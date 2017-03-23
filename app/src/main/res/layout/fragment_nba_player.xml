@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_nba_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:queryBackground="@null"
+        android:queryHint="请输入关键字"
+        android:textColor="#757575"
+        app:iconifiedByDefault="false" />
+
+    <com.ct.sprintnba_demo01.mview.indexablelistview.IndexableStickyListView
+        android:id="@+id/index_list_nba_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        app:indexBar_selected_textColor="#FF8888"
+        app:indexListView_rightOverlayColor="#FF8888"
+        app:indexListView_type_overlay="center" />
+
+
+</LinearLayout>

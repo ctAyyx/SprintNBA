@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ct.sprintnba_demo01">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/launch"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme01">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowBNAActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MMDetaileActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MusicListActivity"
+            android:launchMode="singleTop" />
+
+        <service android:name=".mservice.MusicPlayService" />
+
+        <activity
+            android:name=".MusicPlayActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ShowArtistActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ClipActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MusicSearchActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".AboutMeActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".WebActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".ChooseMMTabActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_music_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.ct.sprintnba_demo01.MusicListActivity">
+
+    <include layout="@layout/layout_base_action_bar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_music_list_activity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF" />
+
+    <include layout="@layout/include_play_bar" />
+
+
+</LinearLayout>

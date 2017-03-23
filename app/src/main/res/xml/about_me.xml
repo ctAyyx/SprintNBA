@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="SprintNBA">
+
+        <Preference
+            android:id="@+id/preference2"
+            android:key="version"
+            android:summary="v1.0"
+            android:title="当前版本" />
+        <Preference
+            android:key="updata"
+            android:title="检查更新" />
+
+        <Preference
+            android:id="@+id/preference"
+            android:key="share"
+            android:title="推荐给朋友" />
+
+        <Preference
+            android:key="star"
+            android:summary="前往APP地址给我一个赞"
+            android:title="呦！还不错哦" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="关于作者">
+
+        <Preference
+            android:id="@+id/preference3"
+            android:key="email"
+            android:summary="1486935673@qq.com"
+            android:title="电子邮箱" />
+        <Preference
+            android:key="telphone"
+            android:summary="18080947055"
+            android:title="联系电话" />
+
+        <Preference
+            android:key="github"
+            android:summary="https://github.com/ctAyyx"
+            android:title="Github" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="数据来源">
+        <Preference
+            android:summary="腾讯NBA"
+            android:title="NBA" />
+
+        <Preference
+            android:summary="毒霸美图"
+            android:title="福利" />
+        <Preference
+            android:summary="百度音乐"
+            android:title="音乐" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

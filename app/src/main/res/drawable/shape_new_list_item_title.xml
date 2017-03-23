@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners
+        android:bottomLeftRadius="@dimen/radius_new_list_item"
+        android:bottomRightRadius="@dimen/radius_new_list_item" />
+    <solid android:color="@color/tvback_new_list"></solid>
+
+</shape>
