@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -21,6 +22,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -119,7 +121,14 @@ public class NewsActivity extends BaseActivity implements View.OnClickListener, 
         SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(this);
         String path = preference.getString("photoUri", "");
 
-        Glide.with(this).load(path).placeholder(R.drawable.timg).transform(new GlideUtil().new CircleTransformation(NewsActivity.this)).into(img_head);
+        if (TextUtils.isEmpty(path))
+            Glide.with(this).load(R.drawable.timg)
+                    .transform(new GlideUtil().new CircleTransformation(NewsActivity.this))
+                    .into(img_head);
+        else
+            Glide.with(this).load(path)
+                    .transform(new GlideUtil().new CircleTransformation(NewsActivity.this))
+                    .into(img_head);
         tv_nickname.setText("昵称");
         viewPager.setEnableScroll(false);
 

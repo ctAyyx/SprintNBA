@@ -18,10 +18,10 @@ public class MMController extends BaseController<BaseMMResponse> {
         super(context, iView);
     }
 
-    public void getMMphoto(int reqId, int page, String category) {
+    public void getMMphoto(int reqId, int start, int page, String category) {
         ServiceApi serviceApi;
-        if ((serviceApi = helper.getServiceApi(NetConstant.HOST_MM)) == null)
+        if ((serviceApi = helper.getServiceApi(NetConstant.HOST_MM2)) == null)
             return;
-        helper.setObservable(serviceApi.getMMPhoto(page, category), reqId);
+        helper.setObservable(serviceApi.getMMPhoto2(category, start, page), reqId);
     }
 }

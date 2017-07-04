@@ -9,8 +9,25 @@
     <!-- NBA   -->
 
 
-    <string-array name="drawer_menu">
-
+    <string-array name="gril_title">
+        <item>可爱</item>
+        <item>性感</item>
+        <item>唯美</item>
+        <item>清纯</item>
+        <item>高挑</item>
+        <item>惊艳</item>
+        <item>风情</item>
+        <item>韩国</item>
+        <item>女神</item>
+        <item>粉嫩</item>
+        <item>短发</item>
+        <item>时尚</item>
+        <item>天使</item>
+        <item>摄影</item>
+        <item>有沟必火</item>
+        <item>小清新</item>
+        <item>人体</item>
+        <item>泳装</item>
     </string-array>
 
     <string-array name="music_title">

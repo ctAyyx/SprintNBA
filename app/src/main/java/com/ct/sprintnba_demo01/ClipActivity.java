@@ -3,6 +3,7 @@ package com.ct.sprintnba_demo01;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,7 +73,7 @@ public class ClipActivity extends BaseActivity {
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 90, ous);
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             } finally {
 
                 try {

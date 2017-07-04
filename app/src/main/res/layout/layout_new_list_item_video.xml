@@ -27,7 +27,7 @@
         android:background="#AACCCCCC"
         android:gravity="left|center_vertical"
         android:orientation="vertical"
-        android:visibility="gone">
+      >
 
         <TextView
             android:id="@+id/tv_video_title_news_list_item"
@@ -38,6 +38,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="5dp"
             android:ellipsize="end"
+
             android:gravity="left"
             android:singleLine="true"
             android:text="biaoti"

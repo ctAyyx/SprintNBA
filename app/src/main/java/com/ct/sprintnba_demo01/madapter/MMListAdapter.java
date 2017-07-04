@@ -53,8 +53,9 @@ public class MMListAdapter extends BaseRVAdapter<MMEntity> {
        /* params.width = DeviceUtils.deviceWidth(mContext) / 2;
         params.height = getRandomHeight();
         cardView.setLayoutParams(params);*/
-      //  Glide.with(mContext).load(item.small_image).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).diskCacheStrategy(DiskCacheStrategy.ALL).into(img1);
-       Picasso.with(mContext).load(item.mid_image).placeholder(R.drawable.bg01).into(img1);
+        //  Glide.with(mContext).load(item.small_image).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).diskCacheStrategy(DiskCacheStrategy.ALL).into(img1);
+        //Picasso.with(mContext).load(item.mid_image).placeholder(R.drawable.bg01).into(img1);
+        Picasso.with(mContext).load(item.picUrl).placeholder(R.drawable.bg01).into(img1);
         if (listener != null)
             holder.setOnItemViewClickListener(new View.OnClickListener() {
                 @Override

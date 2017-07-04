@@ -49,7 +49,7 @@ public class ChooseMMTabActivity extends BaseActivity {
     public void initViewsAndEvents(Bundle savedInstanceState) {
         setTitle("频道选择界面");
 
-        mList = new ArrayList<TabEntity<Column_MM>>();
+        mList = new ArrayList();
         eCache = ECache.get(this, "Tab", false);
 
         adapter = new ChooseAdapter(this, mList);
@@ -67,7 +67,7 @@ public class ChooseMMTabActivity extends BaseActivity {
 
                 if (holder.getAdapterPosition() != 0)
                     helper.startDrag(holder);
-                
+
             }
         }));
 
@@ -98,19 +98,26 @@ public class ChooseMMTabActivity extends BaseActivity {
 
 
     private List<TabEntity<Column_MM>> getTab() {
-        String[] titles = {"校花", "清纯", "气质", "萌女", "壁纸", "非主流", "明星", "美术", "家居", "型男", "萌宠"};
+        String[] titles = getResources().getStringArray(R.array.gril_title); //{"校花", "清纯", "气质", "萌女", "壁纸", "非主流", "明星", "美术", "家居", "型男", "萌宠"};
         Column_MM[] columnMms = {
-                Column_MM.SCHOOL_BABE,
-                Column_MM.PURE,
-                Column_MM.TEMPERAMENT,
-                Column_MM.LOLITA,
-                Column_MM.WALLPAPER,
-                Column_MM.ALTERNATIVE,
-                Column_MM.STAR,
-                Column_MM.ART,
-                Column_MM.HOME,
-                Column_MM.MAN,
-                Column_MM.PET
+                Column_MM.N1,
+                Column_MM.N2,
+                Column_MM.N3,
+                Column_MM.N4,
+                Column_MM.N5,
+                Column_MM.N6,
+                Column_MM.N7,
+                Column_MM.N8,
+                Column_MM.N9,
+                Column_MM.N10,
+                Column_MM.N11,
+                Column_MM.N12,
+                Column_MM.N13,
+                Column_MM.N14,
+                Column_MM.N15,
+                Column_MM.N16,
+                Column_MM.N17,
+                Column_MM.N18
         };
 
         List<TabEntity<Column_MM>> list = new ArrayList<>();
@@ -138,33 +145,33 @@ public class ChooseMMTabActivity extends BaseActivity {
         return cacheList;
     }
 
-    private List<TabEntity<Column_MM>> getNoTab() {
-        String[] titles = {"校花", "清纯", "气质", "萌女", "壁纸", "非主流", "明星", "美术", "家居", "型男", "萌宠"};
-        Column_MM[] columnMms = {
-                Column_MM.SCHOOL_BABE,
-                Column_MM.PURE,
-                Column_MM.TEMPERAMENT,
-                Column_MM.LOLITA,
-                Column_MM.WALLPAPER,
-                Column_MM.ALTERNATIVE,
-                Column_MM.STAR,
-                Column_MM.ART,
-                Column_MM.HOME,
-                Column_MM.MAN,
-                Column_MM.PET
-        };
-
-        List<TabEntity<Column_MM>> list = new ArrayList<>();
-        for (int i = 0; i < titles.length; i++) {
-            TabEntity<Column_MM> entity = new TabEntity<>();
-            entity.title = titles[i];
-            entity.tag = columnMms[i];
-            list.add(entity);
-
-        }
-        eCache.put("tab_json", gson.toJson(list));
-        return list;
-
-    }
+//    private List<TabEntity<Column_MM>> getNoTab() {
+//        String[] titles = {"校花", "清纯", "气质", "萌女", "壁纸", "非主流", "明星", "美术", "家居", "型男", "萌宠"};
+//        Column_MM[] columnMms = {
+//                Column_MM.SCHOOL_BABE,
+//                Column_MM.PURE,
+//                Column_MM.TEMPERAMENT,
+//                Column_MM.LOLITA,
+//                Column_MM.WALLPAPER,
+//                Column_MM.ALTERNATIVE,
+//                Column_MM.STAR,
+//                Column_MM.ART,
+//                Column_MM.HOME,
+//                Column_MM.MAN,
+//                Column_MM.PET
+//        };
+//
+//        List<TabEntity<Column_MM>> list = new ArrayList<>();
+//        for (int i = 0; i < titles.length; i++) {
+//            TabEntity<Column_MM> entity = new TabEntity<>();
+//            entity.title = titles[i];
+//            entity.tag = columnMms[i];
+//            list.add(entity);
+//
+//        }
+//        eCache.put("tab_json", gson.toJson(list));
+//        return list;
+//
+//    }
 
 }

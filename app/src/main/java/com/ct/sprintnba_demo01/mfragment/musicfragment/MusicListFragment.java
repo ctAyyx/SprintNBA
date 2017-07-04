@@ -250,7 +250,7 @@ public class MusicListFragment extends BaseLazyFragment<BaseMusicResponse> imple
         switch (reqId) {
             case NetConstant.NO_NET_NO_CACHE:
             case NetConstant.NET_ERROR:
-                Toast.makeText(mActivity, "网络连接异常，请重试！", Toast.LENGTH_LONG).show();
+                Toast.makeText(mActivity, "网络连接异常，请重试！", Toast.LENGTH_SHORT).show();
                 break;
             case 100:
                 if (response.billboard == null)

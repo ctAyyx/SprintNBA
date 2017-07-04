@@ -10,17 +10,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ct.sprintnba_demo01.base.BaseActivity;
+import com.ct.sprintnba_demo01.base.net.NetConstant;
+import com.ct.sprintnba_demo01.base.net.ServiceApi;
+import com.ct.sprintnba_demo01.base.response.BaseMusicResponse;
 import com.ct.sprintnba_demo01.base.utils.Preference;
 import com.ct.sprintnba_demo01.base.utils.SystemUtils;
+import com.ct.sprintnba_demo01.mcontroller.MusicController;
+import com.ct.sprintnba_demo01.mentity.SongEntity;
 import com.ct.sprintnba_demo01.mfragment.NewsFragment;
 import com.ct.sprintnba_demo01.mservice.MusicPlayService;
 import com.ct.sprintnba_demo01.mutils.FileUtils;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * 启动界面
@@ -75,6 +88,8 @@ public class MainActivity extends BaseActivity {
                 tvLaunchSkip.setVisibility(View.GONE);
 
                 startActivityAndStopSelf(NewsActivity.class, null, null);
+
+
             }
         };
 

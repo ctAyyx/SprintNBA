@@ -79,7 +79,7 @@ public abstract class BaseActivity<T extends BaseController, RT> extends AppComp
         }
 
         super.onCreate(savedInstanceState);
-        StatusBarCompat.compat(this, ContextCompat.getColor(this, R.color.colorPrimary));
+       // StatusBarCompat.compat(this, ContextCompat.getColor(this, R.color.colorPrimary));
      /*   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);

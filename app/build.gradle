@@ -54,6 +54,7 @@ dependencies {
     //动态权限申请
     compile 'pub.devrel:easypermissions:0.1.5'
     compile project(':searchview_library')
-
     compile 'com.github.promeg:tinypinyin:1.0.0'
+    compile files('libs/alipaySingle-20170510.jar')
+    compile files('libs/open_sdk_r5788.jar')
 }

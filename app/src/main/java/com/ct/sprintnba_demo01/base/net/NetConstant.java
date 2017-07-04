@@ -32,6 +32,7 @@ public class NetConstant {
      ****************************************/
     public static final int RESCODE_MM_SUCCESS = 0;
     public static final String HOST_MM = "http://img.m.duba.com";
+    public static final String HOST_MM2 = "http://pic.sogou.com";
     /******************************************************************************/
 
 

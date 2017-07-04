@@ -37,25 +37,46 @@ public class MMFragment extends BaseLazyFragment {
 
     private VPNewsAdapter adapter;
     private ArrayList<BaseFragment> mList;
-    private String[] titles = {"校花", "清纯", "气质", "萌女", "壁纸", "非主流", "明星", "美术", "家居", "型男", "萌宠"};
-    private Column_MM[] columnMms = {
-            Column_MM.SCHOOL_BABE,
-            Column_MM.PURE,
-            Column_MM.TEMPERAMENT,
-            Column_MM.LOLITA,
-            Column_MM.WALLPAPER,
-            Column_MM.ALTERNATIVE,
-            Column_MM.STAR,
-            Column_MM.ART,
-            Column_MM.HOME,
-            Column_MM.MAN,
-            Column_MM.PET
+    private String[] titles;//{"校花", "清纯", "气质", "萌女", "壁纸", "非主流", "明星", "美术", "家居", "型男", "萌宠"};
+//    private Column_MM[] columnMms = {
+//            Column_MM.SCHOOL_BABE,
+//            Column_MM.PURE,
+//            Column_MM.TEMPERAMENT,
+//            Column_MM.LOLITA,
+//            Column_MM.WALLPAPER,
+//            Column_MM.ALTERNATIVE,
+//            Column_MM.STAR,
+//            Column_MM.ART,
+//            Column_MM.HOME,
+//            Column_MM.MAN,
+//            Column_MM.PET
+//    };
+
+    private Column_MM[] columnMms = {Column_MM.N1,
+            Column_MM.N2,
+            Column_MM.N3,
+            Column_MM.N4,
+            Column_MM.N5,
+            Column_MM.N6,
+            Column_MM.N7,
+            Column_MM.N8,
+            Column_MM.N9,
+            Column_MM.N10,
+            Column_MM.N11,
+            Column_MM.N12,
+            Column_MM.N13,
+            Column_MM.N14,
+            Column_MM.N15,
+            Column_MM.N16,
+            Column_MM.N17,
+            Column_MM.N18
     };
 
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
         super.onCreateViewLazy(savedInstanceState);
         setContentView(R.layout.fragment_mms);
+        titles = mActivity.getResources().getStringArray(R.array.gril_title);
         initData();
         adapter = new VPNewsAdapter(getFragmentManager(), mList, titles);
         vp_news.setAdapter(adapter);

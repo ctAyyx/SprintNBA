@@ -1,5 +1,7 @@
 package com.ct.sprintnba_demo01.base.response;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -13,5 +15,6 @@ public class BaseMMResponse<T> implements Serializable {
 
     public int status;
     public String msg;
+    @SerializedName("items")
     public T data;
 }

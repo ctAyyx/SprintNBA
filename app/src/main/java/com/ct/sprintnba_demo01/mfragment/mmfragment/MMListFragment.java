@@ -20,6 +20,7 @@ import com.ct.sprintnba_demo01.base.adapter.BaseRVAdapter;
 import com.ct.sprintnba_demo01.base.fragment.BaseLazyFragment;
 import com.ct.sprintnba_demo01.base.net.NetConstant;
 import com.ct.sprintnba_demo01.base.response.BaseMMResponse;
+import com.ct.sprintnba_demo01.base.utils.DeviceUtils;
 import com.ct.sprintnba_demo01.constant.Column_MM;
 import com.ct.sprintnba_demo01.constant.OwnConstant;
 import com.ct.sprintnba_demo01.madapter.MMListAdapter;
@@ -44,8 +45,12 @@ public class MMListFragment extends BaseLazyFragment<BaseMMResponse> {
     private List<MMEntity> mList = new ArrayList<>();
     private MMController controller;
 
-    private Column_MM columnMm = Column_MM.SCHOOL_BABE;
-    private int page = 1;
+    //    private Column_MM columnMm = Column_MM.SCHOOL_BABE;
+    private Column_MM columnMm = Column_MM.N1;
+    private static int DEFULT = 20;
+    private int start = 0;
+    //private int page = 1;
+
 
     @Override
     protected void onCreateViewLazy(Bundle savedInstanceState) {
@@ -66,14 +71,16 @@ public class MMListFragment extends BaseLazyFragment<BaseMMResponse> {
 
         controller = new MMController(mActivity, this);
         refreshLayout.setRefreshing(true);
-        controller.getMMphoto(100, page, columnMm.getCategory());
+        controller.getMMphoto(100, start, DEFULT, columnMm.getCategory());
 
 
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                page = 1;
-                controller.getMMphoto(100, page, columnMm.getCategory());
+                // page = 1;
+                start = 0;
+                //controller.getMMphoto(100, page, columnMm.getCategory());
+                controller.getMMphoto(100, start, DEFULT, columnMm.getCategory());
             }
         });
 
@@ -91,8 +98,10 @@ public class MMListFragment extends BaseLazyFragment<BaseMMResponse> {
                         ((lastVisibleItemPosition[0] >= totalItemCount - 1) ||
                                 (lastVisibleItemPosition[1] >= totalItemCount - 1))) {
                     recyclerView.scrollToPosition(adapter.getItemCount() - 1);
-                    page += 1;
-                    controller.getMMphoto(101, page, columnMm.getCategory());
+                    // page += 1;
+                    start += DEFULT;
+                    // controller.getMMphoto(101, page, columnMm.getCategory());
+                    controller.getMMphoto(101, start, DEFULT, columnMm.getCategory());
                 }
 
 
@@ -104,9 +113,12 @@ public class MMListFragment extends BaseLazyFragment<BaseMMResponse> {
             public void onItemClick(int postion, View itemView) {
 
                 Intent intent = new Intent(mActivity, MMDetaileActivity.class);
-                intent.putExtra("img_URL", mList.get(postion).big_image);
-                intent.putExtra("NAME", columnMm.getCategory());
+                // intent.putExtra("img_URL", mList.get(postion).big_image);
+                //intent.putExtra("NAME", columnMm.getCategory());
                 //  startActivity(intent);
+
+                intent.putExtra("img_URL", mList.get(postion).picUrl);
+                intent.putExtra("NAME", mList.get(postion).title);
                 sceneTransition(intent, itemView);
             }
         });
